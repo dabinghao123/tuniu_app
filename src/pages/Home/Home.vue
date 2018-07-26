@@ -9,7 +9,7 @@
 import tHeader from '@/common/tHeader'
 import tSwiper from './components/tSwiper'
 import tIcon from './components/tIcon'
-import { getSwiperSlide } from '@/api/getData'
+import { getHomeInfo } from '@/api/getData'
 export default {
     name: 'home',
     components: {
@@ -28,13 +28,15 @@ export default {
     },
     methods: {
         getInfo () {
-            getSwiperSlide().then(this.getHomeInfoSucc)
+            getHomeInfo().then(this.getHomeInfoSucc)
         },
         getHomeInfoSucc(res) {
             if (res.ret && res.data) {
+                console.log(res.data)
                 this.swiperList = res.data.swiperList
+                this.iconList = res.data.iconList
+                this.recommendList = res.data.recommendList
             }
-            
         }
     },
     mounted () {

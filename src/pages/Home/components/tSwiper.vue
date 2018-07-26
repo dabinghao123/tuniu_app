@@ -33,12 +33,13 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+@import '~styles/varibles'
 .swiper-wrapper >>> .swiper-pagination-bullet-active
-    background: #fff
+    background: $selectedColor
 .swiper-wrapper >>> .swiper-pagination-bullet
-    width 10px
-    height 4px
-    border-radius 5px
+    width .2rem
+    height .06rem
+    border-radius .12rem
     margin 0 3px
 .swiper-wrapper
     overflow hidden

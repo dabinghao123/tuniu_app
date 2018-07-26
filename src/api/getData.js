@@ -1,7 +1,7 @@
-import { LOCATION, CITIES_INFO, SWIPER_SLIDE } from './apiconfig'
+import { LOCATION, CITIES_INFO, HOME_INFO } from './apiconfig'
 import axios from 'axios'
-export const getSwiperSlide = () => new Promise((resolve, reject) => {
-    axios.get(SWIPER_SLIDE)
+export const getHomeInfo = () => new Promise((resolve, reject) => {
+    axios.get(HOME_INFO)
       .then( res => resolve(res.data))
 })
 export const getLocation = () => new Promise((resolve, reject) => {
