@@ -1,5 +1,5 @@
 <template>
-    <div class="icons">
+    <div class="icons border-bottom">
         <swiper :options="Option">
             <swiper-slide v-for="(page, index) in pages" :key="index">
                 <div class="icon" v-for="item of page" :key="item.id">
@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-    name: 'tIcons',
+    name: 'tIcon',
     props: {
         iconList: {
             type: Array
@@ -49,7 +49,9 @@ export default {
     height 0
     padding-bottom 25%
 .icons
-    margin-top: .1rem
+    background #fff
+    padding-top .1rem
+    padding-bottom .1rem
     .icon
         position relative
         overflow hidden

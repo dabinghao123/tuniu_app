@@ -3,25 +3,29 @@
         <t-header></t-header>
         <t-swiper :swiperList="swiperList"></t-swiper>
         <t-icon :iconList="iconList"></t-icon>
+        <t-activity :activityList="activityList"></t-activity>
     </div>
 </template>
 <script>
 import tHeader from '@/common/tHeader'
 import tSwiper from './components/tSwiper'
 import tIcon from './components/tIcon'
+import tActivity from './components/tActivity'
 import { getHomeInfo } from '@/api/getData'
 export default {
     name: 'home',
     components: {
         tHeader,
         tSwiper,
-        tIcon
+        tIcon,
+        tActivity
     },
     data () {
         return {
             lastCity: '',
             swiperList:[],
             iconList:[],
+            activityList:[],
             recommendList:[],
             weekendList:[]
         }
@@ -32,9 +36,9 @@ export default {
         },
         getHomeInfoSucc(res) {
             if (res.ret && res.data) {
-                console.log(res.data)
                 this.swiperList = res.data.swiperList
                 this.iconList = res.data.iconList
+                this.activityList = res.data.activityList
                 this.recommendList = res.data.recommendList
             }
         }
@@ -49,11 +53,9 @@ export default {
             this.getHomeInfo()
         }
     }
-
 }
 </script>
-<style lang="stylus" scoped>
-
+<style lang="stylus">
+.home
+    background #eee
 </style>
-
-
