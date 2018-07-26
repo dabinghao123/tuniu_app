@@ -51,6 +51,7 @@ export default {
 @import '~styles/varibles'
 @import '~styles/mixin'
 .header-wrapper
+    width 100%
     display flex
     justify-content space-between
     align-items center
@@ -63,7 +64,8 @@ export default {
     .header-input
         height 30px
         border-radius 4px
-        width auto
+        width 100%
+        margin .2rem
         border 1px solid #eee
         background #FFF
         .prompt
@@ -74,16 +76,15 @@ export default {
             color $fontColor
     .header-right
         flex 1
-        font-size 14px
-        min-width 1.04rem
-        margin-right 10px
-        color $fontColor
-        ellipsis()
+        font-size .28rem
+        margin-right .1rem
+        color $fontColor    
         .city
             font-size 0
-            float right 
+            min-width .2rem
+            ellipsis()   
             .selected-city, .iconfont
-                font-size 14px
+                font-size .28rem
 .egg
     position fixed
     z-index 20

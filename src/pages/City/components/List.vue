@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="area">
-                <div class="title border-topbottom">热门城市</div>
+                <div class="title border-topbottom" ref="hot">热门城市</div>
                 <div class="button-list">
                     <div class="button-wrapper" v-for="item in hotCities"
                     :key="item.id" @click="handleCityClick(item.name)">
@@ -54,8 +54,14 @@ export default {
     watch: {
         letter () {
             if(this.letter) {
-                const element = this.$refs[this.letter][0]
-                this.scroll.scrollToElement(element)
+                if (this.letter === '热') {
+                    console.log('热')
+                    const hot = this.$refs.hot
+                    this.scroll.scrollToElement(hot)
+                } else {
+                    const element = this.$refs[this.letter][0]
+                    this.scroll.scrollToElement(element)
+                }
             }
             this.changeToast()
         }
@@ -131,7 +137,7 @@ export default {
         transform translate(-50%,-50%)
         width .7rem
         height .7rem
-        background rgba(0,0,0,.2)
+        background $selectedColor
         text-align center
         border-radius 50%
         transition all 0.5s
@@ -144,7 +150,7 @@ export default {
         .letter
             line-height .7rem
             font-size .5rem
-            color $fontColor
+            color #fff
 
 
 

@@ -19,6 +19,7 @@ export default {
             for (let i in this.cities) {
                 letters.push(i)
             }
+            letters.unshift('热')
             return letters
         }
     },
@@ -30,7 +31,8 @@ export default {
         }
     },
     updated () {
-        this.startY = this.$refs['A'][0].offsetTop 
+        this.startY = this.$refs['热'][0].offsetTop 
+        console.log(this.startY)
     },
     methods: {
         handleLetterClick (e) {
@@ -45,8 +47,8 @@ export default {
                     clearTimeout (this.timer)
                 }
                 this.timer = setTimeout ( () => {
-                    const touchY = e.touches[0].clientY - 79
-                    const index = Math.floor(( touchY - this.startY ) / 15)
+                    const touchY = e.touches[0].clientY - 84
+                    const index = Math.floor(( touchY - this.startY ) / 18)
                     if (index >= 0) {
                         this.$emit('change', this.letters[index])
                     }
@@ -73,7 +75,7 @@ export default {
     justify-content center
     align-items center
     .item
-        height .3rem
+        height .36rem
         color $selectedColor
 </style>
 
