@@ -1,8 +1,8 @@
 <template>
-    <div class="activity-wrapper border-bottom">
-        <ul class="activity-list">
+    <div class="wrapper border-bottom">
+        <ul class="list">
             <li class="list-content" v-for="item in activityList" :key="item.id">
-                <img :src="item.imgUrl" class="activity-img"/>
+                <img :src="item.imgUrl" class="list-pic"/>
             </li>
         </ul>
     </div>
@@ -18,14 +18,14 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.activity-wrapper
+.wrapper
     width 100%
-    margin-top .2rem
-    .activity-list
+    margin-top .5rem
+    .list
         display flex
         flex-wrap wrap
         .list-content
             width 33.33%
-        .activity-img
-            width 100%
+            .list-pic
+                width 100%
 </style>

@@ -37,14 +37,14 @@ export default {
 .swiper-wrapper >>> .swiper-pagination-bullet-active
     background: $selectedColor
 .swiper-wrapper >>> .swiper-pagination-bullet
-    width .2rem
-    height .06rem
-    border-radius .12rem
-    margin 0 3px
+    width .5rem
+    height .15rem
+    border-radius .25rem
+    margin 0 .15rem
 .swiper-wrapper
     overflow hidden
     width 100%
-    height 3.4rem
+    height 8.5rem
     .swiper-img
         width 100%
         height 100%

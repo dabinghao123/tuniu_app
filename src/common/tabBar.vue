@@ -36,8 +36,8 @@ export default {
     display flex
     justify-content space-around
     align-items center
-    z-index 10
-    height .96rem
+    z-index 100
+    height 2.4rem
     .tab
       display flex
       flex-direction column
@@ -46,8 +46,8 @@ export default {
       color $fontColor
       .text
         display block
-        margin-top .1rem
-        font-size .28rem
+        margin-top .25rem
+        font-size .7rem
     .active
       color $selectedColor
 </style>

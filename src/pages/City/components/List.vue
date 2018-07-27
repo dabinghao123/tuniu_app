@@ -100,43 +100,43 @@ export default {
     overflow hidden
     position absolute
     z-index -1
-    top 1.68rem
+    top 4.2rem
     left 0
     right 0
-    bottom .96rem
+    bottom 2.4rem
     .title
-        line-height .54rem
+        line-height 1.35rem
         background #eee
-        font-size .26rem
-        padding-left .2rem
+        font-size .65rem
+        padding-left .5rem
         color #666
     .button-list
         overflow hidden
-        padding .1rem .6rem .1rem .1rem
+        padding .25rem 1.5rem .25rem .25rem
         .button-wrapper
             float left
             width 33.33%
             .button
-                margin .1rem
-                padding .1rem 0
+                margin .25rem
+                padding .25rem 0
                 text-align center
-                border .02rem solid #ccc
-                border-radius .06rem
+                border .05rem solid #ccc
+                border-radius .15rem
             .active
-                border .02rem solid #ccc
+                border .05rem solid #ccc
                 color $selectedColor
     .item-list
         .item
-            line-height .76rem
+            line-height 1.9rem
             color #666
-            padding-left .2rem
+            padding-left .5rem
     .toast
         position fixed
         top 50%
         left 50%
         transform translate(-50%,-50%)
-        width .7rem
-        height .7rem
+        width 1.75rem
+        height 1.75rem
         background $selectedColor
         text-align center
         border-radius 50%
@@ -148,8 +148,8 @@ export default {
         &.fade-leave-active
             opacity 0
         .letter
-            line-height .7rem
-            font-size .5rem
+            line-height 1.75rem
+            font-size 1.25rem
             color #fff
 
 

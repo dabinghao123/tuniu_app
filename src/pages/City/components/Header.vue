@@ -16,17 +16,17 @@ export default {
 .header
     position relative
     overflow hidden
-    height .96rem
-    line-height .96rem
+    height 2.4rem
+    line-height 2.4rem
     text-align center
-    font-size .32rem
+    font-size .8rem
     background $headerColor
     color $fontColor
     .header-back
         position absolute
         top 0
         left 0
-        width .64rem
+        width 1.6rem
         text-align center
         color $fontColor
 </style>

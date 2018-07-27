@@ -50,28 +50,28 @@ export default {
     padding-bottom 25%
 .icons
     background #fff
-    padding-top .1rem
-    padding-bottom .1rem
+    padding  .25rem 0
     .icon
         position relative
         overflow hidden
         float left
         width 20%
-        height 1.6rem
+        height 4rem
         .icon-img
             box-sizing: border-box
-            padding: .1rem
+            padding: .25rem
             .icon-img-content
-                width .96rem
+                width 2.4rem
                 display block
                 margin 0 auto
-                height .96rem
+                height 2.4rem
         .icon-keywords
             left: 0
             right: 0
             bottom: 0
-            height: .44rem
-            line-height: .44rem
+            height: 1.1rem
+            font-size .7rem
+            line-height: 1.1rem
             text-align: center
             color: $darkTextColor
             ellipsis()

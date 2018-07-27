@@ -1,9 +1,10 @@
 <template>
     <div class="home">
-        <t-header></t-header>
-        <t-swiper :swiperList="swiperList"></t-swiper>
-        <t-icon :iconList="iconList"></t-icon>
-        <t-activity :activityList="activityList"></t-activity>
+        <t-header/>
+        <t-swiper :swiperList="swiperList"/>
+        <t-icon :iconList="iconList"/>
+        <t-activity :activityList="activityList"/>
+        <t-recommend :recommendList="recommendList"></t-recommend>
     </div>
 </template>
 <script>
@@ -11,6 +12,7 @@ import tHeader from '@/common/tHeader'
 import tSwiper from './components/tSwiper'
 import tIcon from './components/tIcon'
 import tActivity from './components/tActivity'
+import tRecommend from './components/tRecommend'
 import { getHomeInfo } from '@/api/getData'
 export default {
     name: 'home',
@@ -18,7 +20,8 @@ export default {
         tHeader,
         tSwiper,
         tIcon,
-        tActivity
+        tActivity,
+        tRecommend
     },
     data () {
         return {

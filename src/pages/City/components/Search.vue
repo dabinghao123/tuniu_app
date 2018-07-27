@@ -70,32 +70,31 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/varibles'
 .search
-    height .72rem
+    height 1.8rem
     background $headerColor
-    padding 0 .1rem
+    padding 0 .25rem
     .search-input
         box-sizing border-box
-        padding 0 .1rem
+        padding 0 .25rem
         width 100%
-        height .62rem
-        line-height .62rem
+        height 1.55rem
+        line-height 1.55rem
         text-align center
-        border-radius .06rem
+        border-radius .15rem
 .search-content
     overflow hidden
     z-index 1
     position absolute
-    top 1.68rem
+    top 4.2rem
     left 0
     right 0
-    bottom .96rem
+    bottom 2.4rem
     background #eee
     .search-item
-        line-height .62rem
-        padding-left .2rem
+        line-height 1.55rem
+        padding-left .5rem
         color #666
         background #fff
-
 </style>
 
 

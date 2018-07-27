@@ -66,16 +66,16 @@ export default {
 @import '~styles/varibles'
 .alphabet
     position absolute
-    top 1.58rem
+    top 4.2rem
     right 0
-    bottom .96rem
-    width .6rem
+    bottom 2.4rem
+    width 1.5rem
     display flex
     flex-direction column
     justify-content center
     align-items center
     .item
-        height .36rem
+        height .9rem
         color $selectedColor
 </style>
 

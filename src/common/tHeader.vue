@@ -55,36 +55,35 @@ export default {
     display flex
     justify-content space-between
     align-items center
-    height 48px
+    height 2.4rem
     background $headerColor
     .header-left
         flex  1
-        margin-left 15px
-        height 33px
+        margin-left .75rem
+        height 1.65rem
     .header-input
-        height 30px
-        border-radius 4px
+        height 1.5rem
+        border-radius .2rem
         width 100%
-        margin .2rem
-        border 1px solid #eee
+        margin .5rem
+        border .05rem solid #eee
         background #FFF
         .prompt
-            font-size 14px
-            line-height 30px
-            padding-left 10px
-            padding-right 10px
+            font-size .7rem
+            line-height 1.5rem
+            padding 0 .5rem
             color $fontColor
     .header-right
         flex 1
-        font-size .28rem
-        margin-right .1rem
+        font-size .7rem
+        margin-right .25rem
         color $fontColor    
         .city
             font-size 0
-            min-width .2rem
+            min-width .5rem
             ellipsis()   
             .selected-city, .iconfont
-                font-size .28rem
+                font-size .7rem
 .egg
     position fixed
     z-index 20
@@ -94,28 +93,28 @@ export default {
     top 50%
     left 50%
     transform translate(-50%,-50%)
-    border-radius 10px
+    border-radius .5rem
     background rgba(220,220,220,.8)
-    backdrop-filter blur(20px);
+    backdrop-filter blur(1rem);
     // transition all 0.5s
     // &.fade-enter,&.fade-leave
     //     opacity 0
     //     filter blur(2px);
     //     background rgba(7,17,27,0)
     .header
-        font-size 20px
+        font-size 1rem
         text-align center
-        padding-top 10px
+        padding-top .5rem
     .egg-close
         display block
-        width 32px
-        height 32px
-        line-height 32px
+        width 1.6rem
+        height 1.6rem
+        line-height 1.6rem
         text-align center
         margin 0 auto
         bottom 0
         clear both
-        font-size 20px
+        font-size 1rem
 </style>
 
 
