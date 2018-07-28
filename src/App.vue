@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <tab-bar/>
+    <t-header/>
     <keep-alive>
       <router-view/>
     </keep-alive>
+    <tab-bar v-show="isShow"/>
   </div>
 </template>
 
 <script>
 import tabBar from '@/common/tabBar'
+import tHeader from '@/common/tHeader'
+import { mapState } from 'vuex'
 export default {
   name: 'App',
+  computed: {
+    ...mapState(['isShow'])
+  },
   components: {
-    tabBar
+    tabBar,
+    tHeader
   }
 }
 </script>
-
+<style lang="stylus">
+#app
+  width 100%
+  height 100%
+  overflow hidden
+</style>

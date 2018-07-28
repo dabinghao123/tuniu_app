@@ -1,4 +1,4 @@
-let defaultCity = '南昌'
+let defaultCity = '北京'
 try {
     if (localStorage.city) {
         defaultCity = localStorage.city
@@ -6,5 +6,8 @@ try {
 } catch (e) {}
 
 export default {
-    city: defaultCity
+    city: defaultCity,
+    cityList: [],
+    headerStatus: 'home',
+    isShow: true
 }

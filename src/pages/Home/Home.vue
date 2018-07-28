@@ -1,27 +1,35 @@
 <template>
-    <div class="home">
-        <t-header/>
-        <t-swiper :swiperList="swiperList"/>
-        <t-icon :iconList="iconList"/>
-        <t-activity :activityList="activityList"/>
-        <t-recommend :recommendList="recommendList"></t-recommend>
-    </div>
+    <t-scroll class="wrapper">
+        <div class="home-wrapper">
+            <div class="container">
+                <t-swiper :swiperList="swiperList"/>
+                <t-icon :iconList="iconList"/>
+                <t-activity :activityList="activityList"/>
+                <t-recommend :recommendList="recommendList"/>
+            </div>
+        </div>
+    </t-scroll>
 </template>
 <script>
-import tHeader from '@/common/tHeader'
 import tSwiper from './components/tSwiper'
 import tIcon from './components/tIcon'
 import tActivity from './components/tActivity'
 import tRecommend from './components/tRecommend'
-import { getHomeInfo } from '@/api/getData'
+import Bscroll from 'better-scroll'
+import tScroll from '@/common/tScroll'
+import { getHomeInfo, getLocation } from '@/api/getData'
+import { mapState, mapMutations } from 'vuex'
 export default {
     name: 'home',
     components: {
-        tHeader,
         tSwiper,
         tIcon,
         tActivity,
-        tRecommend
+        tRecommend,
+        tScroll
+    },
+    computed: {
+        ...mapState(['city'])
     },
     data () {
         return {
@@ -34,8 +42,17 @@ export default {
         }
     },
     methods: {
-        getInfo () {
-            getHomeInfo().then(this.getHomeInfoSucc)
+        ...mapMutations(['changeHomeHeader','changeCity', 'show']),
+        getCity () {
+            getLocation().then(this.handleCurrentCity)
+        },
+        getHomeInfo () {
+            getHomeInfo().then(this.getHomeInfoSucc)   
+        },
+        handleCurrentCity (res) {
+            if(res.data.name) {
+                this.changeCity(res.data.name)
+            }
         },
         getHomeInfoSucc(res) {
             if (res.ret && res.data) {
@@ -48,9 +65,12 @@ export default {
     },
     mounted () {
         this.lastCity = this.city
-        this.getInfo()
+        this.getCity()
+        this.getHomeInfo()
     },
     activated () {
+        this.changeHomeHeader()
+        this.show()
         if (this.city !== this.lastCity) {
             this.lastCity = this.city
             this.getHomeInfo()
@@ -59,6 +79,13 @@ export default {
 }
 </script>
 <style lang="stylus">
-.home
-    background #eee
+.home-wrapper
+    position: absolute
+    width 100%
+    height 100%
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding 2.4rem 0
+
 </style>

@@ -10,7 +10,8 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-
+.category
+    height 1200px
 </style>
 
 

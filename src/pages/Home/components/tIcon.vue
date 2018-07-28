@@ -52,8 +52,6 @@ export default {
     background #fff
     padding  .25rem 0
     .icon
-        position relative
-        overflow hidden
         float left
         width 20%
         height 4rem
@@ -70,7 +68,7 @@ export default {
             right: 0
             bottom: 0
             height: 1.1rem
-            font-size .7rem
+            font-size $fontSize
             line-height: 1.1rem
             text-align: center
             color: $darkTextColor

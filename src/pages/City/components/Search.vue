@@ -88,7 +88,7 @@ export default {
     top 4.2rem
     left 0
     right 0
-    bottom 2.4rem
+    bottom 0
     background #eee
     .search-item
         line-height 1.55rem

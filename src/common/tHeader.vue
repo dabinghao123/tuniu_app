@@ -1,5 +1,5 @@
 <template>
-    <div class="header-wrapper border-bottom">
+    <div class="home-header border-bottom" v-if="headerStatus === 'home'">
         <div class="header-left" @click="showEgg">
             <img clas="header-logo" src="@/assets/imgs/logo.png" alt="途牛logo" style="height:30px;width:30px">
         </div>
@@ -12,7 +12,7 @@
                 <span class="selected-city">{{this.city}}</span>
             </div>
         </router-link>
-        <transition name="fade" enter-active-class="animated jello" leave-active-class="animated shake">
+        <transition name="fade">
             <div class="egg" v-show="eggShow">
                 <div class="header">
                     Vue2.5 旅途APP
@@ -22,6 +22,12 @@
                 </div>
             </div>
         </transition>
+    </div>
+    <div class="city-header" v-else-if="headerStatus === 'city'">
+        城市选择
+        <router-link to="/">
+            <i class="iconfont header-back" >&#xe600;</i>
+        </router-link>
     </div>
 </template>
 <script>
@@ -36,6 +42,7 @@ export default {
     },
     computed: {
         ...mapState(['city']),
+        ...mapState(['headerStatus'])
     },
     methods: {
         showEgg () {
@@ -50,7 +57,9 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/varibles'
 @import '~styles/mixin'
-.header-wrapper
+.home-header
+    position fixed
+    z-index 100
     width 100%
     display flex
     justify-content space-between
@@ -96,11 +105,11 @@ export default {
     border-radius .5rem
     background rgba(220,220,220,.8)
     backdrop-filter blur(1rem);
-    // transition all 0.5s
-    // &.fade-enter,&.fade-leave
-    //     opacity 0
-    //     filter blur(2px);
-    //     background rgba(7,17,27,0)
+    transition all 0.5s
+    &.fade-enter,&.fade-leave
+        opacity 0
+        filter blur(2px);
+        background rgba(7,17,27,0)
     .header
         font-size 1rem
         text-align center
@@ -115,6 +124,23 @@ export default {
         bottom 0
         clear both
         font-size 1rem
+
+.city-header
+    position relative
+    overflow hidden
+    height 2.4rem
+    line-height 2.4rem
+    text-align center
+    font-size .8rem
+    background $headerColor
+    color $fontColor
+    .header-back
+        position absolute
+        top 0
+        left 0
+        width 1.6rem
+        text-align center
+        color $fontColor
 </style>
 
 

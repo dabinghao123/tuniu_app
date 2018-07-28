@@ -2,7 +2,7 @@
     <div class="list" ref="wrapper">
         <div>
             <div class="area">
-                <div class="title border-topbottom">当前城市</div>
+                <div class="title border-topbottom" ref="hot">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
                         <div class="button active">{{this.city}}</div>
@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="area">
-                <div class="title border-topbottom" ref="hot">热门城市</div>
+                <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
                     <div class="button-wrapper" v-for="item in hotCities"
                     :key="item.id" @click="handleCityClick(item.name)">
@@ -55,15 +55,15 @@ export default {
         letter () {
             if(this.letter) {
                 if (this.letter === '热') {
-                    console.log('热')
                     const hot = this.$refs.hot
                     this.scroll.scrollToElement(hot)
                 } else {
                     const element = this.$refs[this.letter][0]
                     this.scroll.scrollToElement(element)
                 }
+                this.changeToast()
             }
-            this.changeToast()
+            
         }
     },
     mounted () {
@@ -103,11 +103,11 @@ export default {
     top 4.2rem
     left 0
     right 0
-    bottom 2.4rem
+    bottom 0
     .title
         line-height 1.35rem
         background #eee
-        font-size .65rem
+        font-size $fontSize
         padding-left .5rem
         color #666
     .button-list
@@ -151,9 +151,6 @@ export default {
             line-height 1.75rem
             font-size 1.25rem
             color #fff
-
-
-
 </style>
 
 

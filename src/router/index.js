@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import Home from 'pages/Home/Home'
 import Destination from 'pages/Destination/Destination'
 import Category from 'pages/Category/Category'
-import Detail from 'pages/Detail/Detail'
-import My from 'pages/My/My'
-import City from 'pages/City/City'
 
+// 对不是立马显示在首页的路由进行懒加载
+const My =() =>import('pages/My/My');
+const City =() =>import('pages/City/City');
+const Detail =() =>import('pages/Detail/Detail');
 Vue.use(Router)
 
 export default new Router({

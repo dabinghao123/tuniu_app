@@ -68,9 +68,10 @@ export default {
     position absolute
     top 4.2rem
     right 0
-    bottom 2.4rem
-    width 1.5rem
+    bottom 0
+    width 1.2rem
     display flex
+    font-size $fontSize
     flex-direction column
     justify-content center
     align-items center

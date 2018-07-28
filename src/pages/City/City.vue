@@ -1,6 +1,5 @@
 <template>
     <div>
-        <city-header></city-header>
         <city-search :cities="cities"></city-search>
         <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
         <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
@@ -8,14 +7,14 @@
 </template>
 <script>
 import axios from 'axios'
-import cityHeader from './components/Header'
 import citySearch from './components/Search'
 import cityList from './components/List'
 import cityAlphabet from './components/Alphabet'
+import { getCitiesInfo } from '@/api/getData'
+import {  mapMutations } from 'vuex' 
 export default {
     name: 'City',
     components: {
-        cityHeader,
         citySearch,
         cityList,
         cityAlphabet
@@ -28,27 +27,25 @@ export default {
         }
     },
     methods: {
+        ...mapMutations(['changeCityHeader','hidden','addCityData','changeCity']),
         getCityInfo () {
-            axios.all([
-                axios.get('https://elm.cangdu.org/v1/cities?type=guess'),
-                axios.get('https://www.easy-mock.com/mock/5b574c739a5ff5320380791b/tuniu/citiesInfo')
-                ])
-                .then(axios.spread((curCityRes,cityRes) => {
-                    // 上面两个请求都完成后，才执行这个回调方法
-                    console.log('curCityRes', curCityRes);
-                    console.log('cityRes', cityRes);
-                    this.handleGetCityInfoSucc(curCityRes,cityRes)
-                }))
+            getCitiesInfo().then(this.handleGetCityInfoSucc)
         },
-        handleGetCityInfoSucc (curCityRes,cityRes) {
-            if(cityRes.data.ret && cityRes.data) {
-                this.cities = cityRes.data.data.cities
-                this.hotCities = cityRes.data.data.hotCities
+        handleGetCityInfoSucc (res) {
+            if(res.data.ret && res.data) {
+                let cityList = res.data.data
+                this.addCityData(cityList)
+                this.cities = cityList.cities
+                this.hotCities = cityList.hotCities
             }
         },
         handleLetterChange (letter) {
             this.letter = letter
         }
+    },
+    activated () {
+        this.changeCityHeader()
+        this.hidden()
     },
     mounted () {
         this.getCityInfo ()
