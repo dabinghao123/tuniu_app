@@ -3,7 +3,7 @@
         <slot></slot>
     </div>
 </template>
-<script type="text/ecmascript-6">
+<script>
   import BScroll from 'better-scroll'
   export default {
     props: {
@@ -14,7 +14,7 @@
        */
       probeType: {
         type: Number,
-        default: 3
+        default: 1
       },
       /**
        * 点击列表是否派发click事件

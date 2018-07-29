@@ -1,11 +1,11 @@
 <template>
     <div class="destination">
-        destination
+        
     </div>
 </template>
 <script>
 export default {
-    name: 'destination'
+    name: 'destination',
 }
 </script>
 <style lang="stylus" scoped>
