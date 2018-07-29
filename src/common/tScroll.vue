@@ -1,5 +1,5 @@
 <template>
-    <div ref="wrapper">
+    <div class="scroll-wrapper" ref="wrapper">
         <slot></slot>
     </div>
 </template>
@@ -157,4 +157,16 @@
     }
   }
 </script>
+<style lang="stylus" scoped>
+.scroll-wrapper
+  overflow hidden
+  position absolute
+  z-index -1
+  top 2.4rem
+  left 0
+  right 0
+  bottom 2.4rem
+  background #eee
+</style>
+
 

@@ -1,12 +1,10 @@
 <template>
-    <t-scroll class="wrapper">
+    <t-scroll>
         <div class="home-wrapper">
-            <div class="container">
-                <t-swiper :swiperList="swiperList"/>
-                <t-icon :iconList="iconList"/>
-                <t-activity :activityList="activityList"/>
-                <t-recommend :recommendList="recommendList"/>
-            </div>
+            <t-swiper :swiperList="swiperList"/>
+            <t-icon :iconList="iconList"/>
+            <t-activity :activityList="activityList"/>
+            <t-recommend :recommendList="recommendList"/>
         </div>
     </t-scroll>
 </template>
@@ -78,12 +76,3 @@ export default {
     }
 }
 </script>
-<style lang="stylus">
-.home-wrapper
-    position: absolute
-    width 100%
-    height 100%
-    left  0
-    right  0
-    top 2.4rem
-</style>

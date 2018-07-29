@@ -135,8 +135,8 @@ export default {
         top 50%
         left 50%
         transform translate(-50%,-50%)
-        width 1.75rem
-        height 1.75rem
+        width 2.4rem
+        height 2.4rem
         background $selectedColor
         text-align center
         border-radius 50%
@@ -148,7 +148,7 @@ export default {
         &.fade-leave-active
             opacity 0
         .letter
-            line-height 1.75rem
+            line-height 2.4rem
             font-size 1.25rem
             color #fff
 </style>
