@@ -1,5 +1,5 @@
 <template>
-    <div class="home-header border-bottom" v-if="headerStatus === 'home'">
+    <div class="home-header" v-if="headerStatus === 'home'">
         <div class="header-left" @click="showEgg">
             <img clas="header-logo" src="@/assets/imgs/logo.png" alt="途牛logo" style="height:30px;width:30px">
         </div>
@@ -124,7 +124,6 @@ export default {
         bottom 0
         clear both
         font-size 1rem
-
 .city-header
     position relative
     overflow hidden

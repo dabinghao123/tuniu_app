@@ -38,6 +38,7 @@ export default {
         text-indent: .5rem
         bottom 2.4rem
     .item
+        background #fff
         overflow: hidden
         display: flex
         height: 3rem

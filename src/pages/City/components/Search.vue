@@ -71,7 +71,7 @@ export default {
 @import '~styles/varibles'
 .search
     height 1.8rem
-    background $headerColor
+    background #eee
     padding 0 .25rem
     .search-input
         box-sizing border-box

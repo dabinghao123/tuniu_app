@@ -48,6 +48,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .list
+	background #fff
 	padding .5rem	.75rem
 	display flex
 	text-align justify

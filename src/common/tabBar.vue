@@ -30,7 +30,7 @@ export default {
 .tabbar-wrapper
   position fixed
   bottom 0
-  background #fff
+  background $tabColor
   width 100%
   .tabbar
     display flex

@@ -6,7 +6,6 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
 import citySearch from './components/Search'
 import cityList from './components/List'
 import cityAlphabet from './components/Alphabet'
@@ -17,7 +16,8 @@ export default {
     components: {
         citySearch,
         cityList,
-        cityAlphabet
+        cityAlphabet,
+        tTransition
     },
     data () {
         return {
