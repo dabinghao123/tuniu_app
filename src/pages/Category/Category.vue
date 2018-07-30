@@ -1,4 +1,5 @@
 <template>
+<t-transition>
 	<t-scroll>
 		<ul class="category">
 			<router-link tag="li" :to="'/detail/'+item.id" class="list border-bottom" v-for="item of categoryList" :key="item.id">
@@ -15,8 +16,10 @@
 			</router-link>
 		</ul>
 	</t-scroll>
+</t-transition>
 </template>
 <script>
+import tTransition from '@/common/tTransition'
 import tScroll from '@/common/tScroll'
 import { getCategoryInfo } from '@/api/getData'
 export default {
@@ -27,7 +30,8 @@ export default {
 		}
 	},
 	components: {
-		tScroll
+		tScroll,
+		tTransition
 	},
 	methods: {
 		getInfo() {

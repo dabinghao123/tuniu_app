@@ -1,7 +1,8 @@
+import storage from '@/model/storage'
 let defaultCity = '北京'
 try {
-    if (localStorage.city) {
-        defaultCity = localStorage.city
+    if (storage.get(city)) {
+        defaultCity = storage.get(city)
     }
 } catch (e) {}
 

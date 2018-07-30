@@ -1,4 +1,5 @@
 <template>
+<t-transition>
     <t-scroll>
         <div class="my-header">
             <img class="avatar" src="@/assets/imgs/avatar.png" alt="头像">
@@ -24,13 +25,16 @@
             </div>
         </div>
     </t-scroll>
+</t-transition>
 </template>
 <script>
+import tTransition from '@/common/tTransition'
 import tScroll from '@/common/tScroll'
 export default {
     name: 'my',
     components: {
-        tScroll
+        tScroll,
+        tTransition
     },
     data () {
         return {

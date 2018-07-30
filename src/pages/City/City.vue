@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="city-wrapper">
         <city-search :cities="cities"></city-search>
         <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
         <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
@@ -16,8 +16,7 @@ export default {
     components: {
         citySearch,
         cityList,
-        cityAlphabet,
-        tTransition
+        cityAlphabet
     },
     data () {
         return {
@@ -52,6 +51,7 @@ export default {
     }
 }
 </script>
+
 
 
 

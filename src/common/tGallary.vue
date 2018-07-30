@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-    name: 'Gallary',
+    name: 'tGallary',
     props: {
         imgs: {
             type: Array

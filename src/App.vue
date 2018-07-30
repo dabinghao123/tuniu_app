@@ -2,16 +2,13 @@
   <div id="app">
     <t-header/>
     <keep-alive>
-      <t-transition>
-        <router-view/>
-      </t-transition>
+      <router-view/>
     </keep-alive>
     <tab-bar v-show="isShow"/>
   </div>
 </template>
 
 <script>
-import tTransition from '@/common/tTransition'
 import tabBar from '@/common/tabBar'
 import tHeader from '@/common/tHeader'
 import { mapState } from 'vuex'
@@ -22,8 +19,7 @@ export default {
   },
   components: {
     tabBar,
-    tHeader,
-    tTransition
+    tHeader
   }
 }
 </script>

@@ -32,7 +32,7 @@ export default {
     },
     updated () {
         this.startY = this.$refs['热'][0].offsetTop 
-        console.log(this.startY)
+        console.log('其实' + this.startY)
     },
     methods: {
         handleLetterClick (e) {

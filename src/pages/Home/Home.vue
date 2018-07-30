@@ -1,4 +1,5 @@
 <template>
+<t-transition>
     <t-scroll>
         <div class="home-wrapper">
             <t-swiper :swiperList="swiperList"/>
@@ -7,8 +8,10 @@
             <t-recommend :recommendList="recommendList"/>
         </div>
     </t-scroll>
+</t-transition>
 </template>
 <script>
+import tTransition from '@/common/tTransition'
 import tSwiper from './components/tSwiper'
 import tIcon from './components/tIcon'
 import tActivity from './components/tActivity'
@@ -24,7 +27,8 @@ export default {
         tIcon,
         tActivity,
         tRecommend,
-        tScroll
+        tScroll,
+        tTransition
     },
     computed: {
         ...mapState(['city'])
