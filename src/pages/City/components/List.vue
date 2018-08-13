@@ -79,7 +79,10 @@ export default {
         },
         changeToast () {
             this.showToast = true
-                setTimeout(()=>{
+            if(this.timer) {
+                clearTimeout(this.timer)
+            }
+            this.timer = setTimeout(()=>{
                     this.showToast = false
             },500)
         }
