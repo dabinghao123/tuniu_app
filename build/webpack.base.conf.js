@@ -29,6 +29,22 @@ module.exports = {
       '@': resolve('src'),
       'styles': resolve('src/assets/styles'),
       'pages': resolve('src/pages')
+    },
+    modules: [
+      //指定当前目录下的node_modules 优先查找
+      path.resolve(__dirname, 'node_modules'),
+      //如果有一些类库放在一些奇怪的地方， 可以添加自定义的路径或者目录
+      'node_modules'
+    ],
+    //配置 target === "web" 或者 target === "webworker" 时，mainFields 默认值是：
+    mainFields: ['browser', 'modules', 'main'],
+    //target为其他值时，mainFields 默认值是：
+    mainFields: ['modules', 'main'],
+    //当目录下没有package.json文件，默认使用的文件
+    mainFiles: ['index'],
+    resolveLoader: {
+      extensions: ['.js', '.json'],
+      mainFields: ['loader', ',main']
     }
   },
   module: {
